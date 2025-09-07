@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, Any
 import math
-from .core import Shape, ShapeSpec, _validate_triangle_sides
+from .core import _validate_triangle_sides
 
 
 @dataclass(frozen=True)

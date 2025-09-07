@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, Any
 import math
-from .core import Shape, ShapeSpec, _require_positive_finite
+from .core import _require_positive_finite
 
 
 @dataclass(frozen=True)
@@ -11,7 +11,7 @@ class Circle:
 
     def area(self) -> float:
         _require_positive_finite("radius", self.radius)
-        return math.pi * (self.radius ** 2)
+        return math.pi * (self.radius**2)
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Circle":

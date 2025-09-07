@@ -26,6 +26,7 @@ def compute_area(shape_or_spec: "Shape | Dict[str, Any]") -> float:
 
 def is_right_triangle(a: float, b: float, c: float, *, eps: float = 1e-9) -> bool:
     from .core import _validate_triangle_sides
+
     _validate_triangle_sides(a, b, c)
     x, y, z = sorted((float(a), float(b), float(c)))
     lhs = x * x + y * y

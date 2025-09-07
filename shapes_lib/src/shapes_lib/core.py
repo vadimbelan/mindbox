@@ -33,6 +33,4 @@ def _validate_triangle_sides(a: float, b: float, c: float) -> None:
     _require_positive_finite("c", c)
     x, y, z = sorted((a, b, c))
     if x + y <= z:
-        raise ValidationError(
-            f"triangle inequality violated: {x} + {y} <= {z}"
-        )
+        raise ValidationError(f"triangle inequality violated: {x} + {y} <= {z}")
