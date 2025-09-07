@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shapes-lib"
+version = "1.0.0"
+description = "Shapes library (Mindbox)"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "vadimbelan" }]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["shapes_lib*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
