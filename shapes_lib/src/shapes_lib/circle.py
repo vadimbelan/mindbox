@@ -1,16 +1,20 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, Any
-# from .core import Shape, ShapeSpec
-from .core import Shape, ShapeSpec
+import math
+from .core import Shape, ShapeSpec, _require_positive_finite
+
 
 @dataclass(frozen=True)
 class Circle:
     radius: float
 
     def area(self) -> float:
-        raise NotImplementedError("ok")
+        _require_positive_finite("radius", self.radius)
+        return math.pi * (self.radius ** 2)
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Circle":
-        raise NotImplementedError("ok")
+        r = data.get("radius", data.get("r", None))
+        _require_positive_finite("radius", r)
+        return cls(float(r))
