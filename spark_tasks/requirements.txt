@@ -1,0 +1,4 @@
+pyspark[sql]==3.5.1
+pandas>=2.3
+pyarrow>=12
+papermill>=2.6
